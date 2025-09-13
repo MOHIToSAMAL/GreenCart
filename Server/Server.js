@@ -23,10 +23,8 @@ app.use(cors({ origin: allowedOrigins, credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 
-
-
 await connectDB();
-await connetCloudinary
+await connetCloudinary();
 
 app.get('/', (req,res) => {
     res.send("API is Working")
