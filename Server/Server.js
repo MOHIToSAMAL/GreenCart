@@ -16,10 +16,14 @@ const app = express();
 const PORT = process.env.PORT || 4001;
 
 //Allow Multiple Origins
-const allowedOrigins = ["http://localhost:5173"]
+const allowedOrigins = ["http://localhost:5174","https://greencartin.netlify.app"]
 
 // Middleware configuration
-app.use(cors({ origin: allowedOrigins, credentials: true }));
+app.use(cors({
+  origin: "https://foreverin.netlify.app", // your Netlify URL
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true // if you use cookies
+ }));
 app.use(express.json());
 app.use(cookieParser());
 
